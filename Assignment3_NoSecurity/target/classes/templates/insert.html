@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert Employee</title>
+</head>
+<body>
+	<h1>Insert Employee</h1>
+	
+	<form method="post" action="#" th:action="@{/insertEmployee}" 
+			th:object="${employee}">
+	
+		<input type="hidden" name="id" th:field="*{EMPLOYEE_ID}" />
+		
+		First Name: <input type="text" th:field="*{FIRST_NAME}">
+		
+		Last Name: <input type="text" th:field="*{LAST_NAME}">
+		
+		Email: <input type="email" th:field="*{EMAIL}">
+		
+		Phone Number: <input type="number" th:field="*{PHONE_NUMBER}">
+		
+		Hire Date: <input type="date" th:field="*{HIRE_DATE}">
+		
+		Job ID: <input type="number" th:field="*{JOB_ID}">
+		
+		Salary: <input type="number" th:field="*{SALARY}">
+		
+		Commission %: <input type="number" th:field="*{COMMISSION_PCT}">
+		
+		Manager ID: <input type="number" th:field="*{MANAGER_ID}">
+		
+		Department ID: <select th:field="*{DEPARTMENT_ID}">
+			<option th:each="d:*{DEPARTMENT}" th:value="${d}" th:text="${d}">
+			</select>
+		
+		<input type="submit" value="Insert">
+	
+	
+	</form>
+	
+	
+</body>
+</html>
